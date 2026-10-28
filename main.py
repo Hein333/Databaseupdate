@@ -38,7 +38,7 @@ def update():
                 return rows
 
     except Exception as e:
-        print(f"Database Error{e}",flash=True)
+        print(f"Database Error{e}",flush=True)
         return "Error"
     
 
