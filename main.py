@@ -37,9 +37,9 @@ def update():
                 print(cursor)
                 return rows
 
-        except Exception as e:
-            print(f"Database Error{e}",flash=True)
-            return "Error"
+    except Exception as e:
+        print(f"Database Error{e}",flash=True)
+        return "Error"
     
 
 if __name__ == "__main__":
