@@ -28,18 +28,18 @@ def home():
 def update():
     gmail = request.form("gmail")
     try:
-    with oracledb.connect(user=DB_USER,password=DB_PASSWORD,dsn = DB_DSN) as connection:
-        with connection.cursor() as cursor:
-            cursor.execute(f"INSERT INTO cusdata (gmail) VALUES ({gmail})")
-            cursor.execute("COMMIT")
-            rows = cursor.fetchall()
-            print(rows)
-            print(cursor)
-            return rows
+        with oracledb.connect(user=DB_USER,password=DB_PASSWORD,dsn = DB_DSN) as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(f"INSERT INTO cusdata (gmail) VALUES ({gmail})")
+                cursor.execute("COMMIT")
+                rows = cursor.fetchall()
+                print(rows)
+                print(cursor)
+                return rows
 
-    except Exception as e:
-        print(f"Database Error{e}",flash=True)
-        return "Error"
+        except Exception as e:
+            print(f"Database Error{e}",flash=True)
+            return "Error"
     
 
 if __name__ == "__main__":
