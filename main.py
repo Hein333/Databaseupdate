@@ -18,7 +18,7 @@ try:
             print(cursor)
 
 except Exception as e:
-    print(f"Database Error{e}",flash=True)
+    print(f"Database Error{e}",flush=True)
 
 @app.route("/")
 def home():
